@@ -14,6 +14,14 @@ fn main() {
     println!("The sum of 2 and 4 is {0}", add_or_multiply(2, 4, false));
 
     println!("The product of 2 and 4 is {0}", add_or_multiply(2, 4, true));
+
+    let arr: [i32; 5] = [1, 2, 3, 4, 5];
+    print_array_for(&arr);
+    print_array_foreach(&arr);
+
+    let mut vec :Vec<i32> = vec![1, 2, 3, 4, 5];
+    print_array_for(vec.as_slice());
+    print_array_foreach(vec.as_slice());
 }
 
 fn other_function() {
@@ -37,16 +45,25 @@ fn return_tuple(x: i32, y: f64, z: &str) -> (i32, f64, &str) {
     (x, y, z)
 }
 
-// If/else control flow decides return value
 fn add_or_multiply(x: i32, y: i32, multiply: bool) -> i32 {
-    let mut ret_val: i32 = 0;
-
     if multiply == true {
-        ret_val = x * y;
+        x * y
     }
     else {
-        ret_val = x + y;
+        x + y
     }
+}
 
-    ret_val
+fn print_array_for(x: &[i32]) {
+    println!("Array contains ");
+    for i in 0..(x.len()) {
+        println!("{number}");
+    }
+}
+
+fn print_array_foreach(x: &[i32]) {
+    println!("Array contains ");
+    for number in x {
+        println!("{number}");
+    }
 }
