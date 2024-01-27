@@ -22,6 +22,7 @@ fn main() {
     let mut vec :Vec<i32> = vec![1, 2, 3, 4, 5];
     print_array_for(vec.as_slice());
     print_array_foreach(vec.as_slice());
+
 }
 
 fn other_function() {
@@ -67,3 +68,4 @@ fn print_array_foreach(x: &[i32]) {
         println!("{number}");
     }
 }
+
